@@ -1,0 +1,295 @@
+/* For all Pages */
+a, a:hover {
+    text-decoration: none;
+}
+
+/* For The Home Page */
+.header {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header img {
+    width: 90%;
+}
+
+.header .desc {
+    margin-top: 5%;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.header .button_group {
+    margin-top: 5%;
+}
+
+.header .button_group button {
+    background-color: goldenrod;
+    padding: 25px;
+    display: block;
+    width: 100%;
+    margin-top: 5%;
+    border-radius: 20px 0px 20px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.header .button_group button a {
+    color: black;
+}
+
+.header .button_group button:hover {
+    background-color: black;
+}
+
+.header .button_group button:hover a {
+    color: goldenrod;
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 8%;
+    }
+
+    .header img {
+        width: 90%;
+    }
+
+    .header .button_group {
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .header {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 20%;
+    }
+
+    .header img {
+        width: 90%;
+    }
+}
+
+/* For the Page where clients wtite about themmselves and the BeginQuestionnaire page */
+.header .header_logo {
+    width: 40%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.header .title {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.header .text_muted {
+    margin-top: 0;
+    text-align: center;
+}
+
+.header .textBox {
+    width: 100%;
+    height: 15em;
+    resize: none;
+    scroll-behavior: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.header .control_buttons button {
+    background-color: goldenrod;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    margin-top: 2%;
+    border-radius: 20px 0px 0px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.header .control_buttons #submit {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.header .control_buttons button a {
+    color: black;
+}
+
+.header .control_buttons button:hover {
+    background-color: black;
+    color: goldenrod;
+}
+
+.header .control_buttons button:hover a {
+    color: goldenrod;
+}
+
+.errors {
+    color: red;
+    font-weight: bolder;
+    font-size: 0.6em;
+    margin-bottom: 0%;
+}
+
+@media only screen and (max-width: 1202px) {
+    .header .control_buttons button {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .header .header_logo {
+        width: 50%;
+    }    
+    .client_header {
+        margin-top: 10%;
+    }
+}
+
+/* For the Questionnaire page */
+.header .instructions {
+    text-align: center;
+}
+
+/* For the Questions page */
+.header .quiz_title {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.form-control {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    border: none;
+    font-size: 1.7rem;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+.header .question_buttons button {
+    margin-top: 4%;
+    width: 100%;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.header .question_buttons #go_to_home {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+}
+
+@media only screen and (max-width: 414px) {
+    .form-control {
+        margin-left: 0;
+        margin-right: 0;
+        width: 90%;
+    }
+}
+
+/* Loader */
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.834);
+    z-index: 1;
+}
+
+.spinner {
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: goldenrod transparent goldenrod transparent;
+    border-radius: 50%;
+    animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* On the Big 5 Assesment profile */
+.text_profile_images {
+    opacity: 0.2;
+    height: 460px;
+}
+
+.text_profile_titles {
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+
+.text_profile_scores {
+    color: goldenrod;
+    text-transform: uppercase;
+}
+
+.text_score_results {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.text_control_buttons button {
+    background-color: goldenrod;
+    padding: 5px;
+    width: 100%;
+    margin-top: 1%;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text_control_buttons button a {
+    color: black;
+}
+
+.text_control_buttons button:hover {
+    background-color: black;
+}
+
+.text_control_buttons button:hover a {
+    color: goldenrod;
+}
+
+@media only screen and (max-width: 350px) {
+    .text_profile_images {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 290px) {
+    .text_profile_images {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 220px) {
+    .text_profile_images {
+        height: 1000px;
+    }
+}
+
+.fact_profile_images {
+    opacity: 0.1;
+}

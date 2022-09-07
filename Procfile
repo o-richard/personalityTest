@@ -1,0 +1,1 @@
+web: gunicorn personality.wsgi --log-file -
