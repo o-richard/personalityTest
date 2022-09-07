@@ -24,7 +24,7 @@ const AllPage = () => {
                 case "questionnaire":
                     return <Questionnaire />;
                 case "begin":
-                    return <Questions questions={location.state.quiz} />;
+                    return <Questions questions={location.state.quiz} no_of_quiz={location.state.no_of_quiz} />;
                 case "homepage":
                     return <Homepage />;
                 case "text_results":
