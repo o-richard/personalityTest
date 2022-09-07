@@ -75,16 +75,25 @@ def client_text(request):
     # In case one ask for a get request. The method is not supported
     return render(request, 'error_handler/405.html', status=405)
 
+# A list of expected numbers from the user
+EXPECTED_NUMBERS = ['20', '50', '100']
+
 # Get a questionnaire and send to the client
 def get_questionnaire(request):
     # Check if the request method is a POST
     if request.method == "POST":
+        user_info = json.loads(request.body.decode('utf-8'))
+        the_number = user_info['selected_number']
+        # Validate the number is part of the expected numbers. If not, the values are updated to 100.
+        if the_number not in EXPECTED_NUMBERS:
+            the_number = 100
+
         # Make a request to sentino
         # Use the big5 inventory
         questionnaire_url = "https://api.sentino.org/inventory/neo/questionnaire/create"
         # Ask for 90 questions
         questionnaire_data = {
-            "n": 100,
+            "n": the_number,
             "method":"sentino",
         }
         questionnaire_headers = {

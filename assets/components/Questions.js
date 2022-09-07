@@ -10,6 +10,8 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 function Questions(props) {
     const navigate = useNavigate();
+
+    const TOTAL_NUMBER = props.no_of_quiz;
     
     // Store the selected radio
     const [selectedradio, setSelectedradio] = useState("");
@@ -20,16 +22,19 @@ function Questions(props) {
     };
 
     // The maximum number of questions. Ensures the number when used to access a list it won't make it go out of range
-    const MAX_NUMBER = 100 - 1;
+    const MAX_NUMBER = TOTAL_NUMBER - 1;
 
     // Keep track of the questions
     const [counter, setCounter] = useState(0);
 
-    // Keep track o the questions and the answers
+    // Keep track of the questions and the answers
     const [answers, setAnswers] = useState([]);
 
     // When to show the loader animation
     const [loading, setLoading] = useState(false);
+
+    // Store the number of questions remaining
+    const [remainder, setRemainder] = useState(TOTAL_NUMBER);
 
     // What happens during submission
     const handleSubmit = (event) => {
@@ -48,6 +53,9 @@ function Questions(props) {
         setAnswers(previousState => {
             return [ ...previousState, response]
         });
+        // Record the remaining questions
+        const new_remainder = MAX_NUMBER - counter;
+        setRemainder(new_remainder);
         // Perform the changes if the counter equals the constant max number defined
         if(counter == MAX_NUMBER) {
             // Show the loader
@@ -94,6 +102,7 @@ function Questions(props) {
                 </Link>
                 </button>
             </div>
+            <p className="text-center mt-1 mb-1">{remainder} questions remaining.</p>
             <p className="quiz_title mt-1">{props.questions[counter]}</p>
             <form method="post" onSubmit={handleSubmit}>
                 <label className="form-control">
