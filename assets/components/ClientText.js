@@ -16,6 +16,9 @@ function ClientText() {
     // Actions on the form
     const [clienttext, setClienttext] = useState("");
 
+    // When to show the loader animation
+    const [loading, setLoading] = useState(false);
+
     // Record errors on the form
     const [errors, setErrors] = useState({
         presence: false,
@@ -59,10 +62,13 @@ function ClientText() {
 
     // Specify when submitting the form
     const handleSubmit = (event) => {
+        // Show the loader
+        setLoading(true);
         // Only submit when there are no client errors
         event.preventDefault();
         { errors.presence ? 
-            null
+            // Remove the loader
+            setLoading(false)
         :
         axios.post('/client_text', {
             clienttext: clienttext,
@@ -72,9 +78,13 @@ function ClientText() {
             const results = JSON.parse(response_data.score_response);
             const assessment_results = results.scoring.big5;
             const psych_eval = response_data.psych_value;
+            // Remove the loader
+            setLoading(false);
             navigate('/', {state:{getby:"text_results", text_scores: assessment_results, psych_value: psych_eval, psych_present: true}});
           })
           .catch(function (error) {
+            // Remove the loader
+            setLoading(false);
             console.log("An error occured.");
             });
         }
@@ -113,7 +123,17 @@ function ClientText() {
 
     // Pass the content
     return (
-        <HomeLayout main_body={the_main_body} />
+        <>
+        { loading ? 
+            (
+            <div className="loader-container">
+                <div className="spinner"></div>
+            </div> 
+            )
+            :
+            <HomeLayout main_body={the_main_body} />
+        }
+        </>
     );
 }
 
