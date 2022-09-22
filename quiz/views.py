@@ -76,7 +76,8 @@ def client_text(request):
     return render(request, 'error_handler/405.html', status=405)
 
 # A list of expected numbers from the user
-EXPECTED_NUMBERS = ['20', '50', '100']
+# In NEO you have 30 facets, so it would make more sense.
+EXPECTED_NUMBERS = ['30', '60', '90']
 
 # Get a questionnaire and send to the client
 def get_questionnaire(request):
@@ -86,15 +87,15 @@ def get_questionnaire(request):
         the_number = user_info['selected_number']
         # Validate the number is part of the expected numbers. If not, the values are updated to 100.
         if the_number not in EXPECTED_NUMBERS:
-            the_number = 100
+            the_number = 90
 
         # Make a request to sentino
         # Use the big5 inventory
         questionnaire_url = "https://api.sentino.org/inventory/neo/questionnaire/create"
-        # Ask for 90 questions
+        # Ask for different number of questions
         questionnaire_data = {
             "n": the_number,
-            "method":"sentino",
+            "method":"simple",
         }
         questionnaire_headers = {
             "Authorization": "Token " + settings.SENTINO_TOKEN,
