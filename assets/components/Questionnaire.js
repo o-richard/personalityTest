@@ -56,13 +56,13 @@ function Questionnaire() {
             </p>
             <form method="post">
                 <label className="form-control">
-                <input type="radio" name="answer" value="20" checked={selectedradio === '20'} onChange={handleRadioChange} required />20 Questions
+                <input type="radio" name="answer" value="30" checked={selectedradio === '30'} onChange={handleRadioChange} required />30 Questions
                 </label>
                 <label className="form-control">
-                <input type="radio" name="answer" value="50" checked={selectedradio === '50'} onChange={handleRadioChange} required />50 Questions
+                <input type="radio" name="answer" value="60" checked={selectedradio === '60'} onChange={handleRadioChange} required />60 Questions
                 </label>
                 <label className="form-control">
-                <input type="radio" name="answer" value="100" checked={selectedradio === '100'} onChange={handleRadioChange} required />100 Questions
+                <input type="radio" name="answer" value="90" checked={selectedradio === '90'} onChange={handleRadioChange} required />90 Questions
                 </label>
             </form>
             <div className="control_buttons">
