@@ -36,18 +36,21 @@ Ensure you are in the project's root folder when you run the following command.
 
 - Choose one of the two options at the homepage.
 
-* Option 1.
 - When you choose "Write something about Yourself", you will fill a brief description of yourself according to the instructions given.
+
 ![A brief description of yourself](screenshots/write-home.png "Where you write a brief description of yourself.")
 - After you submit, you will get an analysis on your personality according to the big 5 traits.
+
 ![An analysis on your big 5 traits](screenshots/write-response.png "An analysis on your big 5 traits.")
 
-* Option 2.
 - When you choose "Take a Questionnaire", you will have to choose the number of questions.
+
 ![Options on number of questions](screenshots/questionnaire_home.png "Options on number of questions.")
 - You have to choose one of the seven answers in the response to a given question.
+
 ![Sample question](screenshots/question.png "Sample question")
 - After you finish all questions, you will get an analysis on your personality according to the neo personality inventory.
+
 ![An analysis according to the neo personality inventory](screenshots/questionnaire_feedback.png "An analysis according to the neo personality inventory.")
 
 # Project Structure
